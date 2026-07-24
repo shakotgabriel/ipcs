@@ -13,7 +13,7 @@ export function Footer() {
           {/* About */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2">
-              <span className="font-display font-semibold text-lg text-light-blue">I</span>
+              <span className="font-display font-semibold text-lg text-gold">I</span>
               <span className="font-display font-semibold text-base">
                 {siteConfig.name}
               </span>
@@ -31,7 +31,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="flex size-8 items-center justify-center rounded-full text-primary-foreground/80 transition-colors hover:text-light-blue"
+                    className="flex size-8 items-center justify-center rounded-full text-primary-foreground/80 transition-colors hover:text-gold"
                   >
                     <Icon className="size-4" />
                   </a>
@@ -50,7 +50,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-primary-foreground/70 transition-colors hover:text-light-blue"
+                    className="text-sm text-primary-foreground/70 transition-colors hover:text-gold"
                   >
                     {item.label}
                   </Link>
@@ -68,7 +68,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="inline-flex items-center gap-2 transition-colors hover:text-light-blue"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-gold"
                 >
                   {siteConfig.email}
                 </a>
@@ -76,7 +76,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 transition-colors hover:text-light-blue"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-gold"
                 >
                   Send a Message
                 </Link>

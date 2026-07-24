@@ -89,7 +89,7 @@ export default function WhatWeDoPage() {
                         className="flex items-start gap-2.5 text-sm text-foreground"
                       >
                         <span
-                          className="mt-1.5 size-1.5 shrink-0 rounded-full bg-blue"
+                          className="mt-1.5 size-1.5 shrink-0 rounded-full bg-gold"
                           aria-hidden="true"
                         />
                         {activity}
@@ -98,7 +98,7 @@ export default function WhatWeDoPage() {
                   </ul>
                   <Link
                     href={`/what-we-do/${area.slug}`}
-                    className="mt-6 inline-flex items-center gap-1.5 font-medium text-primary transition-colors hover:text-blue"
+                    className="mt-6 inline-flex items-center gap-1.5 font-medium text-primary transition-colors hover:text-gold"
                   >
                     Learn more about {area.title}
                     <ArrowRight className="size-4" />

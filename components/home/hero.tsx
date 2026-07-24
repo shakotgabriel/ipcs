@@ -48,7 +48,7 @@ export function Hero() {
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-36">
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-4 py-1.5 text-sm font-medium text-primary-foreground/90">
-            Institute for Promotion of Civil Society
+            INSTITUTE FOR PROMOTION OF CIVIL SOCIETY
           </span>
           <h1 className="mt-6 text-balance font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
             Working Together for a Just Society
@@ -59,7 +59,7 @@ export function Hero() {
             accountability, inclusion, and sustainable positive change.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <ActionLink href="/about" variant="primary" size="lg">
+            <ActionLink href="/about" variant="gold" size="lg">
               Learn More About Us
               <ArrowRight className="size-5" />
             </ActionLink>

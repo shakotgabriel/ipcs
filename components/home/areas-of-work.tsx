@@ -12,9 +12,9 @@ const buttonLabels: Record<string, string> = {
 }
 
 const areaColors: Record<string, string> = {
-  'conflict-peacebuilding': 'bg-dark-blue',
+  'conflict-peacebuilding': 'bg-gold-dark',
   'organizational-development': 'bg-primary',
-  'livelihood-economic-development': 'bg-blue',
+  'livelihood-economic-development': 'bg-gold',
 }
 
 export function AreasOfWork() {

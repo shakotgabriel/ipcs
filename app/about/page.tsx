@@ -103,7 +103,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-card p-8">
-              <div className="flex size-12 items-center justify-center rounded-full bg-blue/15 text-blue">
+              <div className="flex size-12 items-center justify-center rounded-full bg-gold/15 text-gold">
                 <Target className="size-6" />
               </div>
               <h2 className="mt-5 font-display text-2xl font-bold text-foreground">
@@ -188,7 +188,7 @@ export default function AboutPage() {
                   className="absolute left-[-41px] flex size-5 items-center justify-center rounded-full border-4 border-background bg-primary"
                   aria-hidden="true"
                 />
-                <span className="font-display text-sm font-semibold uppercase tracking-wider text-blue">
+                <span className="font-display text-sm font-semibold uppercase tracking-wider text-gold">
                   {m.year}
                 </span>
                 <h3 className="mt-1 font-display text-xl font-bold text-foreground">
@@ -214,7 +214,7 @@ export default function AboutPage() {
             partner, there is a place for you in our work.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <ActionLink href="/what-we-do" variant="primary" size="lg">
+            <ActionLink href="/what-we-do" variant="gold" size="lg">
               Explore What We Do
             </ActionLink>
             <ActionLink href="/contact" variant="outline-light" size="lg">

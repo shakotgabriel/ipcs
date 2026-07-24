@@ -40,7 +40,7 @@ export function ImpactIntro() {
               key={item.title}
               className="flex flex-col items-center rounded-xl border border-border bg-card p-8 text-center"
             >
-              <span className="flex size-14 items-center justify-center rounded-2xl bg-blue/10 text-blue">
+              <span className="flex size-14 items-center justify-center rounded-2xl bg-gold/10 text-gold">
                 <item.icon className="size-7" aria-hidden="true" />
               </span>
               <h3 className="mt-5 font-display text-lg font-bold text-foreground">
