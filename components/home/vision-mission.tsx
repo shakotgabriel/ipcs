@@ -26,7 +26,7 @@ export function VisionMission() {
           </div>
 
           <div className="rounded-2xl bg-primary p-8 text-primary-foreground sm:p-10">
-            <span className="text-sm font-medium uppercase tracking-wider text-gold">
+            <span className="text-sm font-medium uppercase tracking-wider text-light-blue">
               02 — MISSION
             </span>
             <h3 className="mt-4 font-display text-2xl font-bold">Our Mission</h3>

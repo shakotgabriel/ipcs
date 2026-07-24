@@ -6,7 +6,7 @@ export function NewsletterCta() {
     <section className="bg-background py-16 sm:py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center rounded-3xl border border-border bg-secondary p-8 text-center sm:p-12">
-          <span className="flex size-14 items-center justify-center rounded-2xl bg-green/10 text-green">
+          <span className="flex size-14 items-center justify-center rounded-2xl bg-blue/10 text-blue">
             <Mail className="size-7" aria-hidden="true" />
           </span>
           <h2 className="mt-5 text-balance font-display text-3xl font-bold text-foreground sm:text-4xl">

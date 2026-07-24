@@ -9,7 +9,7 @@ export function Topbar() {
         <div className="flex items-center gap-4">
           <a
             href={`mailto:${siteConfig.email}`}
-            className="flex items-center gap-1.5 text-primary-foreground/90 hover:text-gold transition-colors"
+            className="flex items-center gap-1.5 text-primary-foreground/90 hover:text-light-blue transition-colors"
           >
             <Mail className="size-3.5" />
             <span className="hidden sm:inline">{siteConfig.email}</span>
@@ -22,14 +22,14 @@ export function Topbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/donate"
-            className="text-primary-foreground/90 hover:text-gold transition-colors"
+            className="text-primary-foreground/90 hover:text-light-blue transition-colors"
           >
             Donate
           </Link>
           <span className="text-primary-foreground/40">·</span>
           <Link
             href="/contact"
-            className="text-primary-foreground/90 hover:text-gold transition-colors"
+            className="text-primary-foreground/90 hover:text-light-blue transition-colors"
           >
             Contact Us
           </Link>

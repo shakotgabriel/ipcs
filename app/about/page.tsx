@@ -52,14 +52,36 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="relative aspect-4/3verflow-hidden rounded-2xl">
-              <Image
-                src="/images/about-team.png"
-                alt="IPCS team members standing together in a South Sudanese community"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+            <div className="grid gap-4">
+              <div className="relative aspect-video overflow-hidden rounded-2xl">
+                <Image
+                  src="/images/about-team.png"
+                  alt="IPCS team members standing together in a South Sudanese community"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="relative aspect-square overflow-hidden rounded-2xl">
+                  <Image
+                    src="/images/about-1.jpg"
+                    alt="Community meeting in South Sudan"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+                <div className="relative aspect-square overflow-hidden rounded-2xl">
+                  <Image
+                    src="/images/about-2.jpg"
+                    alt="Training session participants"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -81,7 +103,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-card p-8">
-              <div className="flex size-12 items-center justify-center rounded-full bg-gold/15 text-gold-strong">
+              <div className="flex size-12 items-center justify-center rounded-full bg-blue/15 text-blue">
                 <Target className="size-6" />
               </div>
               <h2 className="mt-5 font-display text-2xl font-bold text-foreground">
@@ -166,7 +188,7 @@ export default function AboutPage() {
                   className="absolute left-[-41px] flex size-5 items-center justify-center rounded-full border-4 border-background bg-primary"
                   aria-hidden="true"
                 />
-                <span className="font-display text-sm font-semibold uppercase tracking-wider text-gold-strong">
+                <span className="font-display text-sm font-semibold uppercase tracking-wider text-blue">
                   {m.year}
                 </span>
                 <h3 className="mt-1 font-display text-xl font-bold text-foreground">
@@ -192,7 +214,7 @@ export default function AboutPage() {
             partner, there is a place for you in our work.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <ActionLink href="/what-we-do" variant="gold" size="lg">
+            <ActionLink href="/what-we-do" variant="primary" size="lg">
               Explore What We Do
             </ActionLink>
             <ActionLink href="/contact" variant="outline-light" size="lg">
