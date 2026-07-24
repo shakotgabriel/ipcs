@@ -4,6 +4,16 @@ import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import './globals.css'
 
+export const fontSans = {
+  variable: '--font-sans',
+  family: 'var(--font-sans)',
+}
+
+export const fontDisplay = {
+  variable: '--font-serif',
+  family: 'var(--font-serif)',
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ipcssouthsudan.org'),
   title: {
@@ -54,7 +64,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#1e2f4d',
+  themeColor: '#0E3350',
   width: 'device-width',
   initialScale: 1,
 }
@@ -65,8 +75,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
-      <body className="min-h-screen font-sans antialiased">
+    <html lang="en" className="bg-background" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+      </head>
+      <body className="min-h-screen font-sans antialiased" suppressHydrationWarning>
         <Header />
         <main id="main-content">{children}</main>
         <Footer />

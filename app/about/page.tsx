@@ -52,7 +52,7 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <div className="relative aspect-4/3verflow-hidden rounded-2xl">
               <Image
                 src="/images/about-team.png"
                 alt="IPCS team members standing together in a South Sudanese community"
@@ -163,7 +163,7 @@ export default function AboutPage() {
             {milestones.map((m) => (
               <li key={m.title} className="relative">
                 <span
-                  className="absolute -left-[41px] flex size-5 items-center justify-center rounded-full border-4 border-background bg-primary"
+                  className="absolute left-[-41px] flex size-5 items-center justify-center rounded-full border-4 border-background bg-primary"
                   aria-hidden="true"
                 />
                 <span className="font-display text-sm font-semibold uppercase tracking-wider text-gold-strong">

@@ -1,21 +1,43 @@
 import Link from 'next/link'
-import { Mail } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 import { siteConfig, footerQuickLinks, socialLinks } from '@/lib/data/site'
-import { Logo } from './logo'
+
 import { NewsletterForm } from '@/components/forms/newsletter-form'
 import { socialIconMap } from '@/components/ui/social-icons'
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-primary text-primary-foreground">
+    <footer className="bg-primary text-primary-foreground">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-4">
           {/* About */}
           <div className="lg:col-span-1">
-            <Logo variant="light" />
+            <div className="flex items-center gap-2">
+              <span className="font-display font-semibold text-lg text-gold">I</span>
+              <span className="font-display font-semibold text-base">
+                {siteConfig.name}
+              </span>
+            </div>
             <p className="mt-4 text-sm leading-relaxed text-primary-foreground/70">
               {siteConfig.description}
             </p>
+            <div className="mt-6 flex gap-3">
+              {socialLinks.map((social) => {
+                const Icon = socialIconMap[social.icon]
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="flex size-8 items-center justify-center rounded-full text-primary-foreground/80 transition-colors hover:text-gold"
+                  >
+                    <Icon className="size-4" />
+                  </a>
+                )
+              })}
+            </div>
           </div>
 
           {/* Quick links */}
@@ -48,44 +70,31 @@ export function Footer() {
                   href={`mailto:${siteConfig.email}`}
                   className="inline-flex items-center gap-2 transition-colors hover:text-gold"
                 >
-                  <Mail className="size-4 shrink-0" />
                   {siteConfig.email}
                 </a>
               </li>
-              <li>South Sudan</li>
-            </ul>
-
-            <h2 className="mt-6 font-display text-sm font-semibold uppercase tracking-wider text-primary-foreground">
-              Follow Us
-            </h2>
-            <ul className="mt-4 flex gap-3">
-              {socialLinks.map((social) => {
-                const Icon = socialIconMap[social.icon]
-                return (
-                  <li key={social.label}>
-                    <a
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={social.label}
-                      className="flex size-9 items-center justify-center rounded-full border border-primary-foreground/20 text-primary-foreground/80 transition-colors hover:border-gold hover:bg-gold hover:text-gold-foreground"
-                    >
-                      <Icon className="size-4" />
-                    </a>
-                  </li>
-                )
-              })}
+              <li>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-gold"
+                >
+                  Send a Message
+                </Link>
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin className="size-4 shrink-0" />
+                Juba, South Sudan
+              </li>
             </ul>
           </div>
 
           {/* Newsletter */}
           <div>
             <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-primary-foreground">
-              Newsletter
+              Stay Connected
             </h2>
             <p className="mt-4 text-sm text-primary-foreground/70">
-              Subscribe to receive updates about our projects, events, and
-              community initiatives.
+              Get occasional updates on IPCS projects, events and opportunities.
             </p>
             <div className="mt-4">
               <NewsletterForm variant="dark" />
@@ -97,14 +106,9 @@ export function Footer() {
           <p className="text-sm text-primary-foreground/60">
             &copy; 2026 {siteConfig.name}. All Rights Reserved.
           </p>
-          <div className="flex gap-4 text-sm text-primary-foreground/60">
-            <Link href="/contact" className="transition-colors hover:text-gold">
-              Contact
-            </Link>
-            <Link href="/donate" className="transition-colors hover:text-gold">
-              Donate
-            </Link>
-          </div>
+          <p className="text-sm text-primary-foreground/60">
+            {siteConfig.fullName}
+          </p>
         </div>
       </div>
     </footer>

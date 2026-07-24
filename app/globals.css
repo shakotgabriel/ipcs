@@ -9,6 +9,12 @@
   --accent: #a54b2a;
   --accent-soft: #f0c5b0;
   --border: rgba(29, 26, 22, 0.12);
+  --primary: #0E3350;
+  --primary-dark: #0A2A43;
+  --gold: #E4C177;
+  --gold-dark: #B8862E;
+  --brown: #9C5A2E;
+  --green: #3F6B52;
 }
 
 @theme inline {
@@ -20,9 +26,15 @@
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --color-border: var(--border);
-  --font-sans: "Trebuchet MS", "Segoe UI", sans-serif;
-  --font-serif: Georgia, "Times New Roman", serif;
-  --font-mono: "SFMono-Regular", "SF Mono", Consolas, "Liberation Mono", monospace;
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-gold: var(--gold);
+  --color-gold-dark: var(--gold-dark);
+  --color-brown: var(--brown);
+  --color-green: var(--green);
+  --font-sans: "Public Sans", "Segoe UI", sans-serif;
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", SF Mono, Consolas, "Liberation Mono", monospace;
 }
 
 * {

@@ -2,40 +2,42 @@ import { impactStats } from '@/lib/data/content'
 
 export function ImpactStats() {
   return (
-    <section className="bg-primary py-16 text-primary-foreground sm:py-20">
+    <section className="bg-secondary py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-balance font-display text-3xl font-bold sm:text-4xl">
+          <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
+            Our Reach
+          </span>
+          <h2 className="mt-2 text-balance font-display text-3xl font-bold sm:text-4xl">
             Our Impact So Far
           </h2>
-          <p className="mt-3 text-pretty leading-relaxed text-primary-foreground/75">
-            A snapshot of IPCS&apos; engagement with communities and civil
-            society across South Sudan.
+          <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
+            Figures below are indicative placeholders to be replaced with IPCS&apos;s verified monitoring &amp; evaluation data.
           </p>
         </div>
 
-        <dl className="mt-12 grid grid-cols-2 gap-6 lg:grid-cols-4">
-          {impactStats.map((stat) => (
+        <dl className="mt-12 max-w-3xl mx-auto space-y-4">
+          {impactStats.map((stat, index) => (
             <div
               key={stat.label}
-              className="rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-6 text-center"
+              className="flex items-center gap-4 border-b border-border pb-4 last:border-0"
             >
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground font-display text-sm font-bold">
+                {String(index + 1).padStart(2, '0')}
+              </span>
               <dt className="sr-only">{stat.label}</dt>
-              <dd>
-                <span className="block font-display text-4xl font-extrabold text-gold">
-                  {stat.value}
-                </span>
-                <span className="mt-2 block text-sm text-primary-foreground/75">
+              <dd className="flex flex-1 items-center justify-between gap-4">
+                <span className="text-sm font-medium text-foreground">
                   {stat.label}
+                </span>
+                <span className="flex-1 border-b border-dashed border-border mx-4" />
+                <span className="font-display text-xl font-bold text-primary">
+                  {stat.value}
                 </span>
               </dd>
             </div>
           ))}
         </dl>
-        <p className="mt-6 text-center text-xs text-primary-foreground/50">
-          Figures are editable placeholders and can be replaced with verified
-          statistics.
-        </p>
       </div>
     </section>
   )
