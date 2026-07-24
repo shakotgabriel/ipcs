@@ -1,0 +1,60 @@
+import { cn } from '@/lib/utils'
+
+export function Eyebrow({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
+  return (
+    <span
+      className={cn(
+        'inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-green',
+        className,
+      )}
+    >
+      <span className="h-px w-6 bg-gold" aria-hidden="true" />
+      {children}
+    </span>
+  )
+}
+
+export function SectionHeading({
+  eyebrow,
+  title,
+  description,
+  align = 'left',
+  className,
+}: {
+  eyebrow?: string
+  title: string
+  description?: string
+  align?: 'left' | 'center'
+  className?: string
+}) {
+  return (
+    <div
+      className={cn(
+        'flex flex-col gap-3',
+        align === 'center' && 'items-center text-center',
+        className,
+      )}
+    >
+      {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
+      <h2 className="text-pretty font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        {title}
+      </h2>
+      {description && (
+        <p
+          className={cn(
+            'max-w-2xl text-pretty leading-relaxed text-muted-foreground',
+            align === 'center' && 'mx-auto',
+          )}
+        >
+          {description}
+        </p>
+      )}
+    </div>
+  )
+}
