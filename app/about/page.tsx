@@ -1,11 +1,24 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
+import Link from 'next/link'
 import { PageHeader } from '@/components/ui/page-header'
 import { SectionHeading } from '@/components/ui/section-heading'
 import { ActionLink } from '@/components/ui/action-button'
 import { siteConfig } from '@/lib/data/site'
-import { orgValues, milestones, approachItems } from '@/lib/data/content'
-import { Target, Eye, Check } from 'lucide-react'
+import {
+  serviceValues,
+  strategicObjectives,
+  philosophyPoints,
+  presenceOffices,
+  whoWeServe,
+  workMethods,
+  contributionItems,
+  impactAchievements,
+  organizationalStrengths,
+  operatingChallenges,
+  partnershipExperience,
+} from '@/lib/data/content'
+import { thematicAreas } from '@/lib/data/thematic-areas'
+import { Eye, Target, Check, MapPin } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -18,68 +31,85 @@ export default function AboutPage() {
     <>
       <PageHeader
         title="Institute for Promotion of Civil Society"
-        description="IPCS contributes to humanity by supporting initiatives with partners and actors committed to peace and development in South Sudan."
+        description="IPCS is a South Sudanese national civil society organisation committed to strengthening democratic governance, protecting human rights, building peace and improving the well-being of vulnerable communities."
         breadcrumbs={[{ label: 'About Us' }]}
       />
 
-      {/* Who we are */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <SectionHeading
                 eyebrow="Who We Are"
-                title="Building an informed citizenry and accountable leadership"
+                title="Building informed citizenship and accountable leadership"
                 align="left"
               />
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  The Institute for Promotion of Civil Society (IPCS) is a South
-                  Sudanese organization working to strengthen communities, civil
-                  society, and the relationship between citizens and those who
-                  govern.
+                  The Institute for Promotion of Civil Society, known as IPCS,
+                  was established in 1999 during the civil war in Sudan in
+                  response to the urgent need to strengthen the capacity of
+                  civil society organisations, local government institutions,
+                  women’s groups, youth groups and traditional leadership
+                  structures.
                 </p>
                 <p>
-                  For over five years, IPCS has worked alongside communities,
-                  church and local leaders, chiefs, civil society organizations,
-                  and development partners to promote peace, protection,
-                  participation, and sustainable development.
+                  The organisation was founded on the conviction that lasting
+                  peace and sustainable development depend on informed citizens,
+                  accountable institutions and strong relationships between
+                  communities and their leaders.
                 </p>
                 <p>
-                  We believe lasting change is led by communities themselves.
-                  Our role is to strengthen the knowledge, skills, systems, and
-                  relationships that make that change possible.
+                  Over the years, IPCS has expanded its work beyond institutional
+                  capacity development to include civic education, human
+                  rights, peacebuilding, protection, livelihoods, agriculture,
+                  health, psychosocial support and disaster preparedness.
+                </p>
+                <p>
+                  IPCS combines governance and humanitarian programming because
+                  communities affected by conflict require both immediate
+                  support and stronger institutions capable of protecting their
+                  rights and responding to their long-term development needs.
                 </p>
               </div>
             </div>
-            <div className="grid gap-4">
-              <div className="relative aspect-video overflow-hidden rounded-2xl">
-                <Image
-                  src="/images/about-team.png"
-                  alt="IPCS team members standing together in a South Sudanese community"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative aspect-square overflow-hidden rounded-2xl">
-                  <Image
-                    src="/images/about-1.jpg"
-                    alt="Community meeting in South Sudan"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                  />
+            <div className="grid gap-4 rounded-3xl border border-border bg-card p-6 sm:p-8">
+              <div className="rounded-2xl bg-muted p-6">
+                <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                  Our Presence
+                </p>
+                <div className="mt-5 space-y-4">
+                  {presenceOffices.map((office) => (
+                    <div key={office.title} className="flex gap-3">
+                      <MapPin className="mt-0.5 size-5 shrink-0 text-primary" />
+                      <div>
+                        <h3 className="font-display text-lg font-semibold text-foreground">
+                          {office.title}
+                        </h3>
+                        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                          {office.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div className="relative aspect-square overflow-hidden rounded-2xl">
-                  <Image
-                    src="/images/about-2.jpg"
-                    alt="Training session participants"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                  />
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-border bg-background p-5">
+                  <p className="text-sm uppercase tracking-wider text-muted-foreground">
+                    Founded
+                  </p>
+                  <p className="mt-2 font-display text-3xl font-bold text-gold">
+                    1999
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-border bg-background p-5">
+                  <p className="text-sm uppercase tracking-wider text-muted-foreground">
+                    Headquarters
+                  </p>
+                  <p className="mt-2 font-display text-xl font-bold text-foreground">
+                    Juba, South Sudan
+                  </p>
                 </div>
               </div>
             </div>
@@ -87,7 +117,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Vision & Mission */}
       <section className="bg-muted py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 md:grid-cols-2">
@@ -114,19 +143,34 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
+
+          <div className="mt-8 rounded-2xl border border-border bg-card p-6">
+            <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+              Our Philosophy
+            </p>
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              {philosophyPoints.map((point) => (
+                <p
+                  key={point}
+                  className="rounded-xl bg-muted p-4 text-sm leading-relaxed text-muted-foreground"
+                >
+                  {point}
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Core values */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Our Values"
-            title="The principles that guide our work"
-            description="Everything we do is grounded in a shared commitment to people, fairness, and lasting change."
+            eyebrow="Our Core Values"
+            title="The principle of SERVICE guides our work"
+            description="Each value reflects the standard IPCS sets for itself in communities, partnerships and programme delivery."
           />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {orgValues.map((value) => (
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {serviceValues.map((value) => (
               <div
                 key={value.title}
                 className="rounded-xl border border-border bg-card p-6"
@@ -143,29 +187,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our approach */}
       <section className="bg-muted py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Our Approach"
-            title="How we create lasting impact"
-            description="We combine partnership, participation, and capacity building to help communities lead their own development."
+            eyebrow="Strategic Objectives"
+            title="What IPCS works to achieve"
+            description="These objectives shape the way IPCS connects governance, human rights, peacebuilding and community development."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {approachItems.map((item) => (
+            {strategicObjectives.map((item) => (
               <div
-                key={item.title}
+                key={item}
                 className="flex gap-4 rounded-xl border border-border bg-card p-6"
               >
                 <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <Check className="size-4" />
                 </div>
                 <div>
-                  <h3 className="font-display text-lg font-semibold text-foreground">
-                    {item.title}
-                  </h3>
                   <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    {item.description}
+                    {item}
                   </p>
                 </div>
               </div>
@@ -174,44 +214,213 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Journey / timeline */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Our Journey"
-            title="Growing with the communities we serve"
+            eyebrow="Philosophy in Practice"
+            title="How IPCS thinks about change"
           />
-          <ol className="mt-12 space-y-8 border-l-2 border-border pl-8">
-            {milestones.map((m) => (
-              <li key={m.title} className="relative">
-                <span
-                  className="absolute left-[-41px] flex size-5 items-center justify-center rounded-full border-4 border-background bg-primary"
-                  aria-hidden="true"
-                />
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
+            {philosophyPoints.map((point, index) => (
+              <div key={point} className="rounded-2xl border border-border bg-card p-6">
                 <span className="font-display text-sm font-semibold uppercase tracking-wider text-gold">
-                  {m.year}
+                  0{index + 1}
                 </span>
-                <h3 className="mt-1 font-display text-xl font-bold text-foreground">
-                  {m.title}
-                </h3>
-                <p className="mt-2 leading-relaxed text-muted-foreground">
-                  {m.description}
-                </p>
-              </li>
+                <p className="mt-3 leading-relaxed text-muted-foreground">{point}</p>
+              </div>
             ))}
-          </ol>
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
+      <section className="bg-muted py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Programme Areas"
+            title="IPCS works across interconnected thematic areas"
+            description="These areas reflect the organisation’s governance and humanitarian portfolio."
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {thematicAreas.map((area) => (
+              <article
+                key={area.slug}
+                className="rounded-2xl border border-border bg-card p-6"
+              >
+                <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <span aria-hidden="true" className="text-lg font-bold">
+                    {area.title.charAt(0)}
+                  </span>
+                </div>
+                <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
+                  {area.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {area.shortDescription}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <div>
+              <SectionHeading
+                eyebrow="Who We Serve"
+                title="Communities and institutions at the centre of our work"
+                description="IPCS works with a broad set of actors whose leadership and participation shape social change."
+                align="left"
+              />
+              <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+                {whoWeServe.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 rounded-lg border border-border bg-card p-4 text-sm text-foreground"
+                  >
+                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <Check className="size-3" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <SectionHeading
+                eyebrow="How We Work"
+                title="Community-centred methods"
+                description="IPCS uses participatory, inclusive and community-centred approaches to design, deliver and evaluate its work."
+                align="left"
+              />
+              <ul className="mt-8 space-y-3">
+                {workMethods.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 rounded-lg border border-border bg-card p-4 text-sm text-foreground"
+                  >
+                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold">
+                      <Check className="size-3" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-muted py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Our Contribution"
+            title="What IPCS has helped communities achieve"
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {contributionItems.map((item) => (
+              <div key={item} className="rounded-2xl border border-border bg-card p-5">
+                <p className="text-sm leading-relaxed text-muted-foreground">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Our Impact"
+            title="Selected achievements"
+            description="These examples reflect IPCS work with partners, communities and institutions over time."
+          />
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {impactAchievements.map((item) => (
+              <div
+                key={item}
+                className="flex gap-3 rounded-2xl border border-border bg-card p-5"
+              >
+                <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <Check className="size-4" />
+                </div>
+                <p className="text-sm leading-relaxed text-muted-foreground">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-muted py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <div>
+              <SectionHeading
+                eyebrow="Organisational Strengths"
+                title="What IPCS brings to partnerships"
+                align="left"
+              />
+              <ul className="mt-8 space-y-3">
+                {organizationalStrengths.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-foreground">
+                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <Check className="size-3" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <SectionHeading
+                eyebrow="Operating Environment"
+                title="The context in which IPCS works"
+                description="IPCS operates in a complex environment shaped by conflict, displacement, insecurity, inflation and limited infrastructure."
+                align="left"
+              />
+              <ul className="mt-8 space-y-3">
+                {operatingChallenges.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-foreground">
+                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold">
+                      <Check className="size-3" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Partnership Experience"
+            title="Institutions IPCS has worked with"
+            description="This experience has strengthened the organisation’s capacity in programme implementation, institutional development, compliance, grant management and community engagement."
+          />
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {partnershipExperience.map((item) => (
+              <div key={item} className="rounded-2xl border border-border bg-card p-5">
+                <p className="text-sm font-medium text-foreground">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-primary py-16 text-primary-foreground md:py-20">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-balance font-display text-3xl font-bold md:text-4xl">
-            Partner with us for a peaceful, thriving South Sudan
+            Partner with IPCS to advance accountable governance and resilient communities
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-pretty leading-relaxed text-primary-foreground/80">
-            Whether you are a community, an organization, or a development
-            partner, there is a place for you in our work.
+            IPCS welcomes partnerships with United Nations agencies,
+            international and national NGOs, bilateral and multilateral donors,
+            government ministries and local authorities, research and academic
+            institutions, faith-based organisations, civil society networks,
+            private-sector actors, foundations and philanthropic institutions.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <ActionLink href="/what-we-do" variant="gold" size="lg">
@@ -221,6 +430,13 @@ export default function AboutPage() {
               Get in Touch
             </ActionLink>
           </div>
+          <p className="mt-6 text-sm text-primary-foreground/75">
+            Contact us at{' '}
+            <Link href={`mailto:${siteConfig.email}`} className="underline underline-offset-4">
+              {siteConfig.email}
+            </Link>
+            .
+          </p>
         </div>
       </section>
     </>

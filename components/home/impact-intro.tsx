@@ -4,21 +4,21 @@ import { SectionHeading } from '@/components/ui/section-heading'
 const highlights = [
   {
     icon: Handshake,
-    title: 'Peace & Conflict Transformation',
+    title: 'Accountable Governance',
     description:
-      'Supporting reconciliation, social cohesion, and locally led peace processes.',
+      'Promoting democratic governance, accountability and stronger relationships between citizens and institutions.',
   },
   {
     icon: Users,
-    title: 'Stronger Civil Society',
+    title: 'Empowered Citizens',
     description:
-      'Strengthening organizations so they can serve communities effectively.',
+      'Expanding civic education, human-rights awareness and access to information so people can participate meaningfully.',
   },
   {
     icon: Sprout,
-    title: 'Sustainable Community Development',
+    title: 'Resilient Communities',
     description:
-      'Promoting livelihoods and well-being that communities can sustain.',
+      'Supporting peacebuilding, protection, livelihoods, food security and psychosocial well-being in conflict-affected communities.',
   },
 ]
 
@@ -28,8 +28,8 @@ export function ImpactIntro() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Who We Are"
-          title="Building a More Just, Peaceful and Inclusive Society"
-          description="The Institute for Promotion of Civil Society (IPCS) is committed to strengthening communities, supporting civil society, promoting accountable leadership, and contributing to sustainable peace and development. Through partnerships, training, advocacy, and community-based initiatives, IPCS works with people and institutions to create meaningful and lasting positive change."
+          title="Building accountable leadership, empowered citizens and resilient communities"
+          description="IPCS is a South Sudanese national civil society organisation committed to strengthening democratic governance, protecting human rights, building peace and improving the well-being of vulnerable communities. Through inclusive partnerships and community-led programmes, IPCS promotes informed citizenship, accountable leadership and sustainable development across South Sudan."
           align="center"
           className="mx-auto"
         />

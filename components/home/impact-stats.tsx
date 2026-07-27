@@ -12,7 +12,7 @@ export function ImpactStats() {
             Our Impact So Far
           </h2>
           <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
-            Figures below are indicative placeholders to be replaced with IPCS&apos;s verified monitoring &amp; evaluation data.
+            Selected milestones from IPCS&apos;s programme history and documented achievements.
           </p>
         </div>
 

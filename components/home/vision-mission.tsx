@@ -7,10 +7,10 @@ export function VisionMission() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
-            Why We Exist
+            Our Direction
           </span>
           <h2 className="mt-2 text-balance font-display text-3xl font-bold sm:text-4xl">
-            Our Vision &amp; Mission
+            Vision and mission
           </h2>
         </div>
 
@@ -38,7 +38,7 @@ export function VisionMission() {
 
         <div className="mt-10 flex justify-center">
           <ActionLink href="/about" variant="ghost" size="lg">
-            Discover More About IPCS
+            Discover the full IPCS story
           </ActionLink>
         </div>
       </div>

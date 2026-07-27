@@ -11,7 +11,7 @@ import { ArrowRight } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'What We Do',
   description:
-    'Our thematic areas: conflict and peacebuilding, organizational development, livelihoods, child protection, citizen participation, and community capacity building.',
+    'Our thematic areas include governance strengthening, civic education, human rights, peacebuilding, protection, livelihoods, agriculture, health and reintegration.',
 }
 
 export default function WhatWeDoPage() {
@@ -19,7 +19,7 @@ export default function WhatWeDoPage() {
     <>
       <PageHeader
         title="Our Thematic Areas of Work"
-        description="IPCS works across six interconnected areas to promote peace, protection, participation, and sustainable development in South Sudan."
+        description="IPCS works across interconnected programmes that promote peace, protection, participation, sustainable development and resilience in South Sudan."
         breadcrumbs={[{ label: 'What We Do' }]}
       />
 

@@ -2,13 +2,13 @@ export const siteConfig = {
   name: 'IPCS South Sudan',
   fullName: 'Institute for Promotion of Civil Society',
   shortName: 'IPCS',
-  email: 'info@ipcssouthsudan.org',
+  email: 'ipcssouthsudan@gmail.com',
   description:
-    'IPCS contributes to humanity by supporting initiatives with partners and actors committed to peace and development.',
+    'The Institute for Promotion of Civil Society is a South Sudanese national civil society organisation committed to strengthening democratic governance, protecting human rights, building peace and improving the well-being of vulnerable communities.',
   vision:
     'An informed citizenry and accountable leadership positively engaged in the development of the nation.',
   mission:
-    'Promoting access to information, effective citizen participation, accountable government, and improved well-being of the people.',
+    'To promote access to information, effective citizen participation, accountable governance and improved well-being of the people.',
 }
 
 export type NavItem = {

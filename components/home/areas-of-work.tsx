@@ -5,16 +5,10 @@ import { cn } from '@/lib/utils'
 import { thematicAreas } from '@/lib/data/thematic-areas'
 import { SectionHeading } from '@/components/ui/section-heading'
 
-const buttonLabels: Record<string, string> = {
-  'conflict-peacebuilding': 'Explore Peacebuilding Work',
-  'organizational-development': 'Explore Organizational Development',
-  'livelihood-economic-development': 'Explore Livelihood Programs',
-}
-
 const areaColors: Record<string, string> = {
-  'conflict-peacebuilding': 'bg-gold-dark',
-  'organizational-development': 'bg-primary',
-  'livelihood-economic-development': 'bg-gold',
+  'governance-civil-society-strengthening': 'bg-primary',
+  'civic-education-access-information': 'bg-gold-dark',
+  'human-rights-rule-of-law-access-to-justice': 'bg-gold',
 }
 
 export function AreasOfWork() {
@@ -26,7 +20,7 @@ export function AreasOfWork() {
         <SectionHeading
           eyebrow="Where We Focus"
           title="Our Areas of Work"
-          description="Three interconnected pillars guide our programming across communities in South Sudan."
+          description="The first three programme areas below anchor a wider set of interventions across governance, rights, peace, protection and resilience."
           align="center"
           className="mx-auto"
         />
@@ -55,7 +49,7 @@ export function AreasOfWork() {
                   href={`/what-we-do#${area.slug}`}
                   className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-gold"
                 >
-                  {buttonLabels[area.slug]}
+                  Explore this area
                   <ArrowRight className="size-4" />
                 </a>
               </div>
