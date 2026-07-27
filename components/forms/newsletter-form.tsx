@@ -62,7 +62,7 @@ export function NewsletterForm({ variant = 'light' }: { variant?: 'light' | 'dar
             className={cn(
               'h-11 w-full rounded-lg border px-4 text-sm outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring',
               dark
-                ? 'border-primary-foreground/25 bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50'
+                ? 'border-shell-foreground/25 bg-shell-foreground/10 text-shell-foreground placeholder:text-shell-foreground/50'
                 : 'border-border bg-background text-foreground placeholder:text-muted-foreground',
             )}
           />
@@ -95,7 +95,7 @@ export function NewsletterForm({ variant = 'light' }: { variant?: 'light' | 'dar
                 ? 'text-green-foreground'
                 : 'text-green'
               : 'text-destructive',
-            status === 'success' && dark && 'text-gold',
+            status === 'success' && dark && 'text-barberry',
           )}
         >
           {status === 'success' ? (

@@ -21,7 +21,7 @@ export function PageHeader({
   return (
     <section
       className={cn(
-        'border-b border-border bg-primary text-primary-foreground',
+        'border-b border-primary-dark/30 bg-primary text-primary-foreground',
         className,
       )}
     >
@@ -34,7 +34,7 @@ export function PageHeader({
                   {crumb.href ? (
                     <Link
                       href={crumb.href}
-                      className="transition-colors hover:text-gold"
+                      className="transition-colors hover:text-barberry"
                     >
                       {crumb.label}
                     </Link>

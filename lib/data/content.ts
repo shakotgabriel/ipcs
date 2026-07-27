@@ -79,14 +79,17 @@ export const philosophyPoints = [
 
 export const presenceOffices = [
   {
+    id: 'national-office-juba',
     title: 'National Office',
     description: 'Hai Tarawa, Juba, within the African Inland Church compound.',
   },
   {
+    id: 'coordination-office-yei',
     title: 'Coordination Office',
     description: 'Yei, Central Equatoria State.',
   },
   {
+    id: 'coordination-office-torit',
     title: 'Coordination Office',
     description: 'Torit, Eastern Equatoria State.',
   },

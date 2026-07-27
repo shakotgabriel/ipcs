@@ -22,7 +22,7 @@ export function ImpactStats() {
               key={stat.label}
               className="flex items-center gap-4 border-b border-border pb-4 last:border-0"
             >
-              <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-gold text-primary-foreground font-display text-sm font-bold">
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-barberry text-blue-dianne font-display text-sm font-bold">
                 {String(index + 1).padStart(2, '0')}
               </span>
               <dt className="sr-only">{stat.label}</dt>
@@ -31,7 +31,7 @@ export function ImpactStats() {
                   {stat.label}
                 </span>
                 <span className="flex-1 border-b border-dashed border-border mx-4" />
-                <span className="font-display text-xl font-bold text-gold">
+                <span className="font-display text-xl font-bold text-primary">
                   {stat.value}
                 </span>
               </dd>

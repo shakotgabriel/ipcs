@@ -7,8 +7,8 @@ import { SectionHeading } from '@/components/ui/section-heading'
 
 const areaColors: Record<string, string> = {
   'governance-civil-society-strengthening': 'bg-primary',
-  'civic-education-access-information': 'bg-gold-dark',
-  'human-rights-rule-of-law-access-to-justice': 'bg-gold',
+  'civic-education-access-information': 'bg-fountain-blue',
+  'human-rights-rule-of-law-access-to-justice': 'bg-barberry',
 }
 
 export function AreasOfWork() {
@@ -29,7 +29,7 @@ export function AreasOfWork() {
           {areas.map((area, index) => (
             <article
               key={area.slug}
-              className="flex flex-col rounded-xl border border-border bg-card overflow-hidden"
+              className="flex flex-col rounded-xl border border-border bg-card overflow-hidden shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-lg hover:shadow-primary/10"
             >
               <div className={cn('h-1.5', areaColors[area.slug] || 'bg-primary')} />
               <div className="p-7">
@@ -47,7 +47,7 @@ export function AreasOfWork() {
                 </p>
                 <a
                   href={`/what-we-do#${area.slug}`}
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-gold"
+                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-fountain-blue"
                 >
                   Explore this area
                   <ArrowRight className="size-4" />

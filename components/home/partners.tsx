@@ -17,7 +17,7 @@ export function Partners() {
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="flex items-center justify-center rounded-lg border border-border bg-card px-6 py-4 text-center min-w-[180px]"
+              className="flex items-center justify-center rounded-lg border border-border bg-card px-6 py-4 text-center min-w-[180px] shadow-sm transition-all hover:border-fountain-blue/40 hover:bg-secondary"
             >
               <span className="text-sm font-medium text-foreground">
                 {partner.name}

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/ui/page-header'
 import { ActionLink } from '@/components/ui/action-button'
+import { ImagePlaceholder } from '@/components/ui/image-placeholder'
 import { AreaIcon } from '@/components/ui/area-icon'
 import {
   thematicAreas,
@@ -56,17 +56,32 @@ export default async function AreaDetailPage({
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-3 lg:gap-14">
-            {/* Main content */}
             <div className="lg:col-span-2">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
-                <Image
-                  src={area.image || '/placeholder.svg'}
-                  alt={area.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 66vw"
-                  priority
+              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-border">
+                <ImagePlaceholder
+                  label={area.title}
+                  variant="primary"
+                  className="absolute inset-0"
                 />
+              </div>
+
+              <div className="mt-6 grid grid-cols-3 gap-4">
+                {['Field Activity', 'Community Session', 'Programme Work'].map(
+                  (label, index) => (
+                    <div
+                      key={label}
+                      className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border"
+                    >
+                      <ImagePlaceholder
+                        label={label}
+                        variant={
+                          (['cream', 'navy', 'charcoal'] as const)[index]
+                        }
+                        className="absolute inset-0"
+                      />
+                    </div>
+                  ),
+                )}
               </div>
 
               <div className="mt-8">
@@ -106,7 +121,6 @@ export default async function AreaDetailPage({
               </div>
             </div>
 
-            {/* Sidebar */}
             <aside className="space-y-6">
               <div className="rounded-2xl border border-border bg-card p-6">
                 <div className="flex items-center gap-2 text-primary">
@@ -122,7 +136,7 @@ export default async function AreaDetailPage({
                       className="flex items-start gap-2 text-sm text-muted-foreground"
                     >
                       <span
-                        className="mt-1.5 size-1.5 shrink-0 rounded-full bg-gold-strong"
+                        className="mt-1.5 size-1.5 shrink-0 rounded-full bg-cream"
                         aria-hidden="true"
                       />
                       {group}
@@ -133,7 +147,7 @@ export default async function AreaDetailPage({
 
               <div className="rounded-2xl bg-primary p-6 text-primary-foreground">
                 <div className="flex items-center gap-2">
-                  <TrendingUp className="size-5 text-gold" />
+                  <TrendingUp className="size-5 text-cream" />
                   <h2 className="font-display text-lg font-semibold">
                     Expected Impact
                   </h2>
@@ -158,7 +172,6 @@ export default async function AreaDetailPage({
         </div>
       </section>
 
-      {/* Related projects */}
       {relatedProjects.length > 0 && (
         <section className="bg-muted py-16 md:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -178,7 +191,7 @@ export default async function AreaDetailPage({
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/what-we-do"
-            className="inline-flex items-center gap-1.5 font-medium text-primary transition-colors hover:text-gold-strong"
+            className="inline-flex items-center gap-1.5 font-medium text-primary transition-colors hover:text-primary-dark"
           >
             <ArrowLeft className="size-4" />
             Back to all areas

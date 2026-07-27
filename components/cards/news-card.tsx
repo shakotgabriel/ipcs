@@ -1,23 +1,21 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Calendar } from 'lucide-react'
+import { ImagePlaceholder } from '@/components/ui/image-placeholder'
 import { formatDate, type NewsItem } from '@/lib/data/news'
 
 export function NewsCard({ item }: { item: NewsItem }) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-lg">
+    <article className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-lg hover:shadow-primary/10">
       <Link
         href={`/news-events/${item.slug}`}
         className="relative aspect-[16/10] overflow-hidden"
       >
-        <Image
-          src={item.image || '/placeholder.svg'}
-          alt={item.title}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        <ImagePlaceholder
+          label={item.category}
+          variant="navy"
+          className="transition-transform duration-500 group-hover:scale-105"
         />
-        <span className="absolute left-3 top-3 rounded-full bg-gold px-3 py-1 text-xs font-semibold text-gold-foreground">
+        <span className="absolute left-3 top-3 rounded-full bg-cream px-3 py-1 text-xs font-semibold text-charcoal">
           {item.category}
         </span>
       </Link>
@@ -39,7 +37,7 @@ export function NewsCard({ item }: { item: NewsItem }) {
         </p>
         <Link
           href={`/news-events/${item.slug}`}
-          className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-gold"
+          className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary-dark"
         >
           Read More
           <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />

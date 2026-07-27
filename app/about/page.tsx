@@ -80,7 +80,7 @@ export default function AboutPage() {
                 </p>
                 <div className="mt-5 space-y-4">
                   {presenceOffices.map((office) => (
-                    <div key={office.title} className="flex gap-3">
+                    <div key={office.id} className="flex gap-3">
                       <MapPin className="mt-0.5 size-5 shrink-0 text-primary" />
                       <div>
                         <h3 className="font-display text-lg font-semibold text-foreground">
@@ -99,7 +99,7 @@ export default function AboutPage() {
                   <p className="text-sm uppercase tracking-wider text-muted-foreground">
                     Founded
                   </p>
-                  <p className="mt-2 font-display text-3xl font-bold text-gold">
+                  <p className="mt-2 font-display text-3xl font-bold text-primary">
                     1999
                   </p>
                 </div>
@@ -120,7 +120,7 @@ export default function AboutPage() {
       <section className="bg-muted py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border border-border bg-card p-8">
+            <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
               <div className="flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <Eye className="size-6" />
               </div>
@@ -131,8 +131,8 @@ export default function AboutPage() {
                 {siteConfig.vision}
               </p>
             </div>
-            <div className="rounded-2xl border border-border bg-card p-8">
-              <div className="flex size-12 items-center justify-center rounded-full bg-gold/15 text-gold">
+            <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
+              <div className="flex size-12 items-center justify-center rounded-full bg-barberry/20 text-blue-dianne">
                 <Target className="size-6" />
               </div>
               <h2 className="mt-5 font-display text-2xl font-bold text-foreground">
@@ -223,7 +223,7 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             {philosophyPoints.map((point, index) => (
               <div key={point} className="rounded-2xl border border-border bg-card p-6">
-                <span className="font-display text-sm font-semibold uppercase tracking-wider text-gold">
+                <span className="font-display text-sm font-semibold uppercase tracking-wider text-primary">
                   0{index + 1}
                 </span>
                 <p className="mt-3 leading-relaxed text-muted-foreground">{point}</p>
@@ -300,7 +300,7 @@ export default function AboutPage() {
                     key={item}
                     className="flex items-start gap-3 rounded-lg border border-border bg-card p-4 text-sm text-foreground"
                   >
-                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold">
+                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-barberry/25 text-blue-dianne">
                       <Check className="size-3" />
                     </span>
                     {item}
@@ -381,7 +381,7 @@ export default function AboutPage() {
               <ul className="mt-8 space-y-3">
                 {operatingChallenges.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-foreground">
-                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold">
+                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-barberry/25 text-blue-dianne">
                       <Check className="size-3" />
                     </span>
                     {item}

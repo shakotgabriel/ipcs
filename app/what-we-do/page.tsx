@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { PageHeader } from '@/components/ui/page-header'
 import { SectionHeading } from '@/components/ui/section-heading'
 import { ActionLink } from '@/components/ui/action-button'
+import { ImagePlaceholder } from '@/components/ui/image-placeholder'
 import { AreaIcon } from '@/components/ui/area-icon'
 import { thematicAreas } from '@/lib/data/thematic-areas'
 import { ArrowRight } from 'lucide-react'
@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description:
     'Our thematic areas include governance strengthening, civic education, human rights, peacebuilding, protection, livelihoods, agriculture, health and reintegration.',
 }
+
+const areaVariants = ['primary', 'navy', 'cream', 'charcoal', 'mixed', 'primary'] as const
 
 export default function WhatWeDoPage() {
   return (
@@ -38,36 +40,28 @@ export default function WhatWeDoPage() {
                 className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14"
               >
                 <div
-                  className={`grid gap-4 ${
-                    index % 2 === 1 ? 'lg:order-2' : ''
-                  }`}
+                  className={`grid gap-4 ${index % 2 === 1 ? 'lg:order-2' : ''}`}
                 >
-                  <div className="relative aspect-video overflow-hidden rounded-2xl">
-                    <Image
-                      src={area.image || '/placeholder.svg'}
-                      alt={area.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
+                  <div className="relative aspect-video overflow-hidden rounded-2xl border border-border">
+                    <ImagePlaceholder
+                      label={area.title}
+                      variant={areaVariants[index % areaVariants.length]}
+                      className="absolute inset-0"
                     />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="relative aspect-square overflow-hidden rounded-2xl">
-                      <Image
-                        src={`/images/what-we-do-${area.slug}-1.jpg`}
-                        alt={`${area.title} activity 1`}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 1024px) 50vw, 25vw"
+                    <div className="relative aspect-square overflow-hidden rounded-2xl border border-border">
+                      <ImagePlaceholder
+                        label={`${area.title} — Activity 1`}
+                        variant="cream"
+                        className="absolute inset-0"
                       />
                     </div>
-                    <div className="relative aspect-square overflow-hidden rounded-2xl">
-                      <Image
-                        src={`/images/what-we-do-${area.slug}-2.jpg`}
-                        alt={`${area.title} activity 2`}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 1024px) 50vw, 25vw"
+                    <div className="relative aspect-square overflow-hidden rounded-2xl border border-border">
+                      <ImagePlaceholder
+                        label={`${area.title} — Activity 2`}
+                        variant="charcoal"
+                        className="absolute inset-0"
                       />
                     </div>
                   </div>
@@ -89,7 +83,7 @@ export default function WhatWeDoPage() {
                         className="flex items-start gap-2.5 text-sm text-foreground"
                       >
                         <span
-                          className="mt-1.5 size-1.5 shrink-0 rounded-full bg-gold"
+                          className="mt-1.5 size-1.5 shrink-0 rounded-full bg-cream"
                           aria-hidden="true"
                         />
                         {activity}
@@ -98,7 +92,7 @@ export default function WhatWeDoPage() {
                   </ul>
                   <Link
                     href={`/what-we-do/${area.slug}`}
-                    className="mt-6 inline-flex items-center gap-1.5 font-medium text-primary transition-colors hover:text-gold"
+                    className="mt-6 inline-flex items-center gap-1.5 font-medium text-primary transition-colors hover:text-primary-dark"
                   >
                     Learn more about {area.title}
                     <ArrowRight className="size-4" />

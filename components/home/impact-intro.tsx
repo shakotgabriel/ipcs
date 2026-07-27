@@ -38,9 +38,9 @@ export function ImpactIntro() {
           {highlights.map((item) => (
             <div
               key={item.title}
-              className="flex flex-col items-center rounded-xl border border-border bg-card p-8 text-center"
+              className="flex flex-col items-center rounded-xl border border-border bg-card p-8 text-center shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-lg hover:shadow-primary/10"
             >
-              <span className="flex size-14 items-center justify-center rounded-2xl bg-gold/10 text-gold">
+              <span className="flex size-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                 <item.icon className="size-7" aria-hidden="true" />
               </span>
               <h3 className="mt-5 font-display text-lg font-bold text-foreground">
