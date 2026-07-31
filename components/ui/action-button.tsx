@@ -8,7 +8,7 @@ export const actionButtonVariants = cva(
     variants: {
       variant: {
         primary: 'bg-primary text-primary-foreground hover:bg-primary/90',
-        gold: 'bg-cream text-charcoal hover:bg-cream/90 font-semibold',
+        gold: 'bg-primary text-primary-foreground hover:bg-primary-dark font-semibold',
         green: 'bg-green text-green-foreground hover:bg-green/90',
         outline:
           'border border-border bg-background text-foreground hover:bg-muted',

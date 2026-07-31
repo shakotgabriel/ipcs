@@ -37,7 +37,7 @@ export function Header() {
   return (
     <>
       <Topbar />
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-shell text-shell-foreground shadow-md">
+      <header className="sticky top-0 z-50 border-b border-border bg-background text-foreground shadow-sm">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-md focus:bg-barberry focus:px-4 focus:py-2 focus:text-sm focus:text-blue-dianne"
@@ -55,10 +55,10 @@ export function Header() {
               priority
             />
             <span className="flex flex-col leading-tight">
-              <span className="font-display text-lg font-extrabold tracking-tight text-barberry">
+              <span className="font-display text-lg font-extrabold tracking-tight text-primary">
                 IPCS
               </span>
-              <span className="text-[11px] font-medium tracking-wide text-shell-foreground/70">
+              <span className="text-[11px] font-medium tracking-wide text-muted-foreground">
                 South Sudan
               </span>
             </span>
@@ -76,8 +76,8 @@ export function Header() {
                 className={cn(
                   'rounded-md px-3 py-2 text-sm font-medium transition-colors',
                   isActive(item.href)
-                    ? 'text-barberry'
-                    : 'text-shell-foreground/80 hover:text-barberry',
+                    ? 'text-primary'
+                    : 'text-muted-foreground hover:text-primary',
                 )}
               >
                 {item.label}
@@ -94,7 +94,7 @@ export function Header() {
 
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 text-shell-foreground transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fountain-blue lg:hidden"
+            className="inline-flex items-center justify-center rounded-md p-2 text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? 'Close menu' : 'Open menu'}
@@ -113,7 +113,7 @@ export function Header() {
             aria-modal="true"
             aria-label="Mobile navigation"
           >
-            <nav className="mx-auto max-w-7xl space-y-1 border-t border-white/10 px-4 py-4 sm:px-6">
+            <nav className="mx-auto max-w-7xl space-y-1 border-t border-border px-4 py-4 sm:px-6">
               {mainNav.map((item) => (
                 <Link
                   key={item.href}
@@ -122,8 +122,8 @@ export function Header() {
                   className={cn(
                     'block rounded-md px-3 py-3 text-base font-medium transition-colors',
                     isActive(item.href)
-                      ? 'bg-white/10 text-barberry'
-                      : 'text-shell-foreground/85 hover:bg-white/10 hover:text-barberry',
+                      ? 'bg-muted text-primary'
+                      : 'text-muted-foreground hover:bg-muted hover:text-primary',
                   )}
                 >
                   {item.label}

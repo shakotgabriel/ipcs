@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { PageHeader } from '@/components/ui/page-header'
 import { ActionLink } from '@/components/ui/action-button'
-import { ImagePlaceholder } from '@/components/ui/image-placeholder'
 import { AreaIcon } from '@/components/ui/area-icon'
 import {
   thematicAreas,
@@ -11,6 +11,7 @@ import {
 } from '@/lib/data/thematic-areas'
 import { getProjectsByArea } from '@/lib/data/projects'
 import { ProjectCard } from '@/components/cards/project-card'
+import { areaImages } from '@/lib/data/placeholders'
 import { Check, Users, TrendingUp, ArrowLeft } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -41,6 +42,7 @@ export default async function AreaDetailPage({
   if (!area) notFound()
 
   const relatedProjects = getProjectsByArea(area.slug).slice(0, 3)
+  const images = areaImages[area.slug] || ['/field.jpeg', '/field2.jpeg', '/field3.jpeg', '/field4.jpeg']
 
   return (
     <>
@@ -58,30 +60,30 @@ export default async function AreaDetailPage({
           <div className="grid gap-12 lg:grid-cols-3 lg:gap-14">
             <div className="lg:col-span-2">
               <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-border">
-                <ImagePlaceholder
-                  label={area.title}
-                  variant="primary"
-                  className="absolute inset-0"
+                <Image
+                  src={images[0]}
+                  alt={area.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 66vw"
                 />
               </div>
 
               <div className="mt-6 grid grid-cols-3 gap-4">
-                {['Field Activity', 'Community Session', 'Programme Work'].map(
-                  (label, index) => (
-                    <div
-                      key={label}
-                      className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border"
-                    >
-                      <ImagePlaceholder
-                        label={label}
-                        variant={
-                          (['cream', 'navy', 'charcoal'] as const)[index]
-                        }
-                        className="absolute inset-0"
-                      />
-                    </div>
-                  ),
-                )}
+                {images.slice(1, 4).map((src, index) => (
+                  <div
+                    key={index}
+                    className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border"
+                  >
+                    <Image
+                      src={src}
+                      alt={`Activity ${index + 1}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 33vw, 22vw"
+                    />
+                  </div>
+                ))}
               </div>
 
               <div className="mt-8">

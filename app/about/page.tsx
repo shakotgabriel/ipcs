@@ -35,22 +35,23 @@ export default function AboutPage() {
         breadcrumbs={[{ label: 'About Us' }]}
       />
 
-      <section className="py-16 md:py-24">
+      <section className="relative py-20 md:py-28">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-muted/20 to-background" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="grid items-center gap-16 lg:grid-cols-2">
             <div>
               <SectionHeading
                 eyebrow="Who We Are"
                 title="Building informed citizenship and accountable leadership"
                 align="left"
               />
-              <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
-                <p>
+              <div className="mt-8 space-y-6 leading-relaxed text-muted-foreground text-lg">
+                <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1">
                   The Institute for Promotion of Civil Society, known as IPCS,
                   was established in 1999 during the civil war in Sudan in
                   response to the urgent need to strengthen the capacity of
                   civil society organisations, local government institutions,
-                  women’s groups, youth groups and traditional leadership
+                  women's groups, youth groups and traditional leadership
                   structures.
                 </p>
                 <p>
@@ -73,43 +74,50 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="grid gap-4 rounded-3xl border border-border bg-card p-6 sm:p-8">
-              <div className="rounded-2xl bg-muted p-6">
-                <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                  Our Presence
-                </p>
-                <div className="mt-5 space-y-4">
-                  {presenceOffices.map((office) => (
-                    <div key={office.id} className="flex gap-3">
-                      <MapPin className="mt-0.5 size-5 shrink-0 text-primary" />
-                      <div>
-                        <h3 className="font-display text-lg font-semibold text-foreground">
-                          {office.title}
-                        </h3>
-                        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                          {office.description}
-                        </p>
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-cream/20 rounded-3xl blur-2xl opacity-50" />
+              <div className="relative grid gap-5 rounded-3xl border border-border bg-card/80 backdrop-blur p-8 sm:p-10 shadow-xl">
+                <div className="rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 p-6 border border-primary/20">
+                  <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+                    📍 Our Presence
+                  </p>
+                  <div className="mt-5 space-y-4">
+                    {presenceOffices.map((office) => (
+                      <div key={office.id} className="flex gap-3 group">
+                        <MapPin className="mt-0.5 size-5 shrink-0 text-primary group-hover:scale-110 transition-transform" />
+                        <div>
+                          <h3 className="font-display text-lg font-semibold text-foreground">
+                            {office.title}
+                          </h3>
+                          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                            {office.description}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-border bg-background p-5">
-                  <p className="text-sm uppercase tracking-wider text-muted-foreground">
-                    Founded
-                  </p>
-                  <p className="mt-2 font-display text-3xl font-bold text-primary">
-                    1999
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-border bg-background p-5">
-                  <p className="text-sm uppercase tracking-wider text-muted-foreground">
-                    Headquarters
-                  </p>
-                  <p className="mt-2 font-display text-xl font-bold text-foreground">
-                    Juba, South Sudan
-                  </p>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="group relative overflow-hidden rounded-2xl border border-border bg-background p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <p className="relative text-sm uppercase tracking-wider text-muted-foreground font-semibold">
+                      Founded
+                    </p>
+                    <p className="relative mt-2 font-display text-4xl font-bold text-primary">
+                      1999
+                    </p>
+                    <p className="relative mt-1 text-xs text-muted-foreground">25+ years of impact</p>
+                  </div>
+                  <div className="group relative overflow-hidden rounded-2xl border border-border bg-background p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <p className="relative text-sm uppercase tracking-wider text-muted-foreground font-semibold">
+                      Headquarters
+                    </p>
+                    <p className="relative mt-2 font-display text-xl font-bold text-foreground">
+                      Juba, South Sudan
+                    </p>
+                    <p className="relative mt-1 text-xs text-muted-foreground">National reach</p>
+                  </div>
                 </div>
               </div>
             </div>

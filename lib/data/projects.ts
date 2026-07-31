@@ -38,7 +38,7 @@ export const projects: Project[] = [
     status: 'Ongoing',
     location: 'South Sudan',
     targetGroup: 'Children at risk, families, and caregivers',
-    image: '/images/project-child-protection.png',
+    image: '/project1.jpeg',
     shortDescription:
       'Protecting the rights and well-being of children through awareness, case management, and family tracing and reunification.',
     overview:
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     status: 'Ongoing',
     location: 'South Sudan',
     targetGroup: 'CSOs, CBOs, and national NGOs',
-    image: '/images/project-cso-capacity.png',
+    image: '/projectyei.jpeg',
     shortDescription:
       'Strengthening the systems, skills, and governance of civil society organizations so they can serve communities effectively.',
     overview:
@@ -126,7 +126,7 @@ export const projects: Project[] = [
     status: 'Ongoing',
     location: 'South Sudan',
     targetGroup: 'Institutional and community stakeholders',
-    image: '/images/project-capacity-moge.png',
+    image: '/field.jpeg',
     shortDescription:
       'Building the capacity of institutional and community stakeholders to plan, coordinate, and deliver effectively.',
     overview:

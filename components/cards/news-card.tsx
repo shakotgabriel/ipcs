@@ -1,6 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Calendar } from 'lucide-react'
-import { ImagePlaceholder } from '@/components/ui/image-placeholder'
 import { formatDate, type NewsItem } from '@/lib/data/news'
 
 export function NewsCard({ item }: { item: NewsItem }) {
@@ -10,10 +10,12 @@ export function NewsCard({ item }: { item: NewsItem }) {
         href={`/news-events/${item.slug}`}
         className="relative aspect-[16/10] overflow-hidden"
       >
-        <ImagePlaceholder
-          label={item.category}
-          variant="navy"
-          className="transition-transform duration-500 group-hover:scale-105"
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
         <span className="absolute left-3 top-3 rounded-full bg-cream px-3 py-1 text-xs font-semibold text-charcoal">
           {item.category}

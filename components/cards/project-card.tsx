@@ -1,16 +1,18 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, MapPin } from 'lucide-react'
-import { ImagePlaceholder } from '@/components/ui/image-placeholder'
 import type { Project } from '@/lib/data/projects'
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-lg hover:shadow-primary/10">
       <div className="relative aspect-[16/10] overflow-hidden">
-        <ImagePlaceholder
-          label={project.title}
-          variant="primary"
-          className="transition-transform duration-500 group-hover:scale-105"
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
         <span className="absolute left-3 top-3 rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold text-primary-foreground backdrop-blur">
           {project.category}

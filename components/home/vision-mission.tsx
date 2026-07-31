@@ -25,12 +25,12 @@ export function VisionMission() {
             </p>
           </div>
 
-          <div className="rounded-2xl bg-primary p-8 text-primary-foreground sm:p-10">
-            <span className="text-sm font-medium uppercase tracking-wider text-barberry">
+          <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
+            <span className="text-sm font-medium uppercase tracking-wider text-primary">
               02 — MISSION
             </span>
             <h3 className="mt-4 font-display text-2xl font-bold">Our Mission</h3>
-            <p className="mt-3 text-pretty leading-relaxed text-primary-foreground/80">
+            <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
               {siteConfig.mission}
             </p>
           </div>

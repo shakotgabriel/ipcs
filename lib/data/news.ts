@@ -25,7 +25,7 @@ export const newsItems: NewsItem[] = [
     category: 'News',
     date: '2026-06-18',
     author: 'IPCS South Sudan',
-    image: '/images/news-dialogue.png',
+    image: '/field.jpeg',
     summary:
       'Local and church leaders came together to strengthen their skills in peacebuilding, reconciliation, and conflict transformation.',
     content: [
@@ -40,7 +40,7 @@ export const newsItems: NewsItem[] = [
     category: 'Project Updates',
     date: '2026-05-27',
     author: 'IPCS South Sudan',
-    image: '/images/project-child-protection.png',
+    image: '/project1.jpeg',
     summary:
       'IPCS continues to raise awareness of child rights and support case management and family tracing and reunification.',
     content: [
@@ -55,7 +55,7 @@ export const newsItems: NewsItem[] = [
     category: 'Events',
     date: '2026-04-15',
     author: 'IPCS South Sudan',
-    image: '/images/project-cso-capacity.png',
+    image: '/projectyei.jpeg',
     summary:
       'A capacity strengthening workshop supported CSOs, CBOs, and national NGOs to improve governance and service delivery.',
     content: [
@@ -70,7 +70,7 @@ export const newsItems: NewsItem[] = [
     category: 'Project Updates',
     date: '2026-03-08',
     author: 'IPCS South Sudan',
-    image: '/images/news-women.png',
+    image: '/field2.jpeg',
     summary:
       'IPCS supported women with training in cultivation practices and livelihood skills to strengthen household resilience.',
     content: [
@@ -85,7 +85,7 @@ export const newsItems: NewsItem[] = [
     category: 'Events',
     date: '2026-02-20',
     author: 'IPCS South Sudan',
-    image: '/images/area-participation.png',
+    image: '/field3.jpeg',
     summary:
       'A community forum brought citizens and leaders together to discuss participation, access to information, and accountability.',
     content: [
@@ -100,7 +100,7 @@ export const newsItems: NewsItem[] = [
     category: 'Announcements',
     date: '2026-01-10',
     author: 'IPCS South Sudan',
-    image: '/images/about-team.png',
+    image: '/board.jpeg',
     summary:
       'IPCS reflects on five years of work with communities, civil society, and partners across its core thematic areas.',
     content: [
