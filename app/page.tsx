@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="pb-16">
       <Hero />
-      <main className="site-shell space-y-16 pb-8 pt-6 sm:space-y-20 sm:pt-10">
+      <main className="site-shell space-y-10  pb-8 pt-6 sm:space-y-20 sm:pt-10">
         <ImpactIntro />
         <ImpactStats />
         <VisionMission />

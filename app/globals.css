@@ -1,122 +1,236 @@
 @import "tailwindcss";
 
+/* ================================
+   Brand Design System
+================================ */
+
 :root {
-  /* Brand palette */
+  /* Brand Colors */
   --brand-blue: #537adb;
-  --brand-white: #ffffff;
-  --brand-cream: #fff8d3;
+  --brand-blue-dark: #4268c4;
   --brand-navy: #011627;
   --brand-charcoal: #343633;
+  --brand-cream: #fff8d3;
+  --brand-cream-soft: #fffdf5;
+  --brand-white: #ffffff;
 
-  /* Semantic tokens */
+  /* Semantic Colors */
   --background: #ffffff;
   --foreground: #343633;
-  --muted: #fff8d3;
-  --muted-foreground: #5a5c58;
-  --card: #ffffff;
-  --card-foreground: #343633;
-  --secondary: #fff8d3;
-  --secondary-foreground: #343633;
-  --primary: #537adb;
+
+  --primary: var(--brand-blue);
+  --primary-dark: var(--brand-blue-dark);
   --primary-foreground: #ffffff;
-  --primary-dark: #4268c4;
-  --accent: #fff8d3;
-  --accent-soft: #fffdf5;
-  --accent-foreground: #011627;
-  --shell: #011627;
-  --shell-foreground: #ffffff;
+
+  --secondary: var(--brand-cream);
+  --secondary-foreground: var(--brand-charcoal);
+
+  --accent: var(--brand-cream);
+  --accent-soft: var(--brand-cream-soft);
+  --accent-foreground: var(--brand-navy);
+
+  --muted: #f8f7ef;
+  --muted-foreground: #5a5c58;
+
+  --card: #ffffff;
+  --card-foreground: var(--brand-charcoal);
+
   --border: rgba(83, 122, 219, 0.16);
-  --ring: #537adb;
+  --ring: var(--brand-blue);
+
   --destructive: #c53030;
 
-  /* Named brand aliases */
-  --cream: #fff8d3;
-  --charcoal: #343633;
-  --navy: #011627;
+  /* Surfaces */
+  --surface: rgba(255, 255, 255, 0.85);
+  --surface-solid: #ffffff;
 
-  /* Legacy aliases */
-  --gold: #fff8d3;
-  --gold-dark: #ede5a0;
-  --gold-light: #fffdf5;
-  --gold-foreground: #011627;
-  --gold-strong: #ede5a0;
-  --green: #537adb;
-  --green-foreground: #ffffff;
-  --surface: rgba(255, 255, 255, 0.95);
-  --surface-strong: #ffffff;
+  /* Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* Shadows */
+  --shadow-soft:
+    0 10px 30px rgba(1, 22, 39, 0.08);
+
+  --shadow-card:
+    0 20px 60px rgba(1, 22, 39, 0.12);
 }
 
+
+/* ================================
+   Tailwind Theme Tokens
+================================ */
+
 @theme inline {
+
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-foreground: var(--primary-foreground);
+
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary-dark: var(--primary-dark);
+
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --color-accent-foreground: var(--accent-foreground);
-  --color-shell: var(--shell);
-  --color-shell-foreground: var(--shell-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
   --color-border: var(--border);
   --color-ring: var(--ring);
+
   --color-destructive: var(--destructive);
-  --color-cream: var(--cream);
-  --color-charcoal: var(--charcoal);
-  --color-navy: var(--navy);
-  --color-gold: var(--gold);
-  --color-gold-dark: var(--gold-dark);
-  --color-gold-light: var(--gold-light);
-  --color-gold-foreground: var(--gold-foreground);
-  --color-gold-strong: var(--gold-strong);
-  --color-green: var(--green);
-  --color-green-foreground: var(--green-foreground);
-  --color-surface: var(--surface);
-  --color-surface-strong: var(--surface-strong);
-  --font-sans: "Public Sans", "Segoe UI", sans-serif;
-  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
-  --font-mono: "IBM Plex Mono", "SFMono-Regular", SF Mono, Consolas, "Liberation Mono", monospace;
+
+  /* Brand shortcuts */
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-charcoal: var(--brand-charcoal);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-white: var(--brand-white);
+
+
+  /* Typography */
+  --font-sans:
+    "Public Sans",
+    "Inter",
+    "Segoe UI",
+    sans-serif;
+
+  --font-serif:
+    "Fraunces",
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  --font-mono:
+    "IBM Plex Mono",
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+
+
+  /* Radius */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
 }
+
+
+/* ================================
+   Base Reset
+================================ */
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--background);
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(83,122,219,0.08),
+      transparent 40%
+    ),
+    var(--background);
+
   color: var(--foreground);
+
   font-family: var(--font-sans);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 
 a {
   color: inherit;
   text-decoration: none;
 }
 
-::selection {
-  background: rgba(83, 122, 219, 0.22);
-  color: var(--foreground);
+
+img {
+  max-width: 100%;
+  height: auto;
 }
+
+
+::selection {
+  background: rgba(83,122,219,0.25);
+  color: var(--brand-navy);
+}
+
+
+/* ================================
+   Layout Utilities
+================================ */
 
 .site-shell {
   width: min(1120px, calc(100% - 2rem));
-  margin: 0 auto;
+  margin-inline: auto;
 }
+
+
+/* ================================
+   Components
+================================ */
 
 .glass-panel {
-  background: var(--surface);
-  backdrop-filter: blur(14px);
-  border: 1px solid var(--border);
-  box-shadow: 0 18px 60px rgba(1, 22, 39, 0.08);
+
+  background:
+    rgba(255,255,255,0.82);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+
+  border:
+    1px solid rgba(83,122,219,0.12);
+
+  box-shadow:
+    var(--shadow-card);
 }
 
+
 .text-display {
-  font-family: var(--font-serif);
+
+  font-family:
+    var(--font-serif);
+
+  letter-spacing:
+    -0.03em;
+}
+
+
+/* ================================
+   Accessibility
+================================ */
+
+:focus-visible {
+
+  outline:
+    3px solid var(--ring);
+
+  outline-offset:
+    3px;
 }

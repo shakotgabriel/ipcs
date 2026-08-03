@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
+
 import { ActionLink } from '@/components/ui/action-button'
 import { heroImages } from '@/lib/data/placeholders'
 import { siteConfig } from '@/lib/data/site'
@@ -16,76 +17,127 @@ const heroGridLayout = [
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-background text-foreground">
-      <div
-        className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,_#ffffff_0%,_#ffffff_52%,_#537adb_52%,_#537adb_100%),radial-gradient(ellipse_at_top_left_0_0,_rgba(83,122,219,0.12),_transparent_50%),radial-gradient(ellipse_at_bottom_right_0_0,_rgba(255,248,211,0.25),_transparent_45%)]"
-        aria-hidden="true"
-      />
-      <div className="absolute inset-0 -z-10 opacity-30" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23537adb' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-      }} />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-background to-transparent" />
+    <section className="relative isolate overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 -z-30">
+        <Image
+          src="/field4.jpeg" // Put your image inside /public
+          alt="IPCS Hero Background"
+          fill
+          priority
+          className="object-cover"
+        />
+      </div>
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 -z-20 bg-black/25" />
+
+      {/* Blue right half */}
+      <div className="absolute inset-y-0 right-0 -z-10 w-1/2 bg-transparent" />
+
+      {/* Smooth blend between image and blue */}
+      <div className="absolute inset-y-0 right-1/2 -z-10 w-40 bg-transparent" />
+
+      {/* Bottom fade */}
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-40 " />
 
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-32">
+        {/* Left Content */}
         <div className="flex flex-col justify-center">
-          <div className="inline-flex w-fit items-center gap-2.5 rounded-full border-2 border-primary/20 bg-primary/5 px-5 py-2 text-sm font-semibold tracking-wide text-primary backdrop-blur-sm">
+          <div className="inline-flex w-fit items-center gap-3 rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm font-semibold text-white backdrop-blur-md">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-yellow-300 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-yellow-300" />
             </span>
+
             INSTITUTE FOR PROMOTION OF CIVIL SOCIETY
           </div>
-          <h1 className="mt-8 text-balance font-display text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.5rem]">
-            Building <span className="text-primary">Accountable Leadership</span>, Empowered Citizens and Resilient Communities
+
+          <h1 className="mt-8 text-balance font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.6rem]">
+            Building{' '}
+            <span className="text-yellow-300">
+              Accountable Leadership
+            </span>
+            , Empowered Citizens and Resilient Communities
           </h1>
-          <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground sm:text-xl">
+
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl">
             {siteConfig.description}
           </p>
+
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <ActionLink href="/about" variant="gold" size="lg" className="shadow-lg shadow-primary/25">
+            <ActionLink
+              href="/about"
+              variant="gold"
+              size="lg"
+              className="shadow-xl shadow-black/20"
+            >
               Learn More About IPCS
               <ArrowRight className="size-5" />
             </ActionLink>
-            <ActionLink href="/what-we-do" variant="outline" size="lg">
+
+            <ActionLink
+              href="/what-we-do"
+              variant="outline"
+              size="lg"
+              className="border-white bg-white/10 text-white backdrop-blur hover:bg-white hover:text-primary"
+            >
               Explore Our Work
             </ActionLink>
           </div>
+
           <div className="mt-12 grid gap-4 sm:grid-cols-3">
             {[
-              { icon: '🏛️', text: 'Good governance and accountability' },
-              { icon: '🤝', text: 'Human rights and civic participation' },
-              { icon: '🕊️', text: 'Peacebuilding and community resilience' },
+              {
+                icon: '🏛️',
+                text: 'Good governance and accountability',
+              },
+              {
+                icon: '🤝',
+                text: 'Human rights and civic participation',
+              },
+              {
+                icon: '🕊️',
+                text: 'Peacebuilding and community resilience',
+              },
             ].map((item) => (
               <div
                 key={item.text}
-                className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/80 p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-md"
+                className="rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:bg-white/15"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                <span className="relative text-2xl mb-2 block">{item.icon}</span>
-                <p className="relative text-sm font-medium leading-relaxed text-foreground">{item.text}</p>
+                <span className="mb-3 block text-3xl">{item.icon}</span>
+
+                <p className="text-sm font-medium leading-relaxed text-white">
+                  {item.text}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="grid min-h-[22rem] grid-cols-3 grid-rows-3 gap-3 sm:min-h-[26rem] lg:min-h-[32rem]">
-          {heroImages.map((image, index) => (
-            <div
-              key={image.id}
-              className={cn(
-                'relative overflow-hidden rounded-2xl border border-border shadow-lg',
-                heroGridLayout[index],
-              )}
-            >
-              <Image
-                src={image.src}
-                alt={image.label}
-                fill
-                className="object-cover transition-transform duration-500 hover:scale-105"
-                sizes="(max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
-              />
+        {/* Right Gallery */}
+        <div className="flex items-center justify-center">
+          <div className="w-full rounded-3xl border border-white/20 bg-white/10 p-5 shadow-2xl backdrop-blur-md">
+            <div className="grid min-h-[24rem] grid-cols-3 grid-rows-3 gap-3 sm:min-h-[30rem] lg:min-h-[34rem]">
+              {heroImages.map((image, index) => (
+                <div
+                  key={image.id}
+                  className={cn(
+                    'relative overflow-hidden rounded-2xl border border-white/20 shadow-xl',
+                    heroGridLayout[index],
+                  )}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.label}
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-110"
+                    sizes="(max-width:768px) 33vw, (max-width:1024px) 25vw, 20vw"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
