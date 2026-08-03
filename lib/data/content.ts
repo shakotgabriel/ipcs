@@ -1,15 +1,43 @@
 export type Partner = {
   name: string
   type: string
+  logo: string
 }
 
 export const partners: Partner[] = [
-  { name: 'European Commission', type: 'Donor' },
-  { name: 'Oxfam Novib', type: 'Development Partner' },
-  { name: 'International HIV/AIDS Alliance', type: 'Development Partner' },
-  { name: 'UNICEF', type: 'UN Agency' },
-  { name: 'World Bank', type: 'Multilateral Partner' },
-  { name: 'PACT Sudan', type: 'Development Partner' },
+  {
+    name: 'European Commission',
+    type: 'Donor',
+    logo: '/europeancommsion.png',
+  },
+  {
+    name: 'Oxfam Novib',
+    type: 'Development Partner',
+    logo: '/oxfam.png',
+  },
+  {
+    name: 'International Rescue Committee',
+    type: 'Development Partner',
+    logo: '/irclogo.png',
+  },
+  {
+    name: 'United Nations Development Programme',
+    type: 'UN Agency',
+    logo: '/undp.png',
+  },
+  {
+    name: 'International HIV/AIDS Alliance',
+    type: 'Development Partner',
+    logo: '/hivlogo.png',
+  },
+  {
+    name: "Norwegian People's Aid",
+    type: 'Development Partner',
+    logo: '/norgienpeoplesaid.png',
+  },
+  { name: 'UNICEF', type: 'UN Agency', logo: '/UNICEF_Logo_(cropped).png' },
+  { name: 'World Bank', type: 'Multilateral Partner', logo: '/worldbank.png' },
+  { name: 'PACT Sudan', type: 'Development Partner', logo: '/pact.jpeg' },
 ]
 
 export type ImpactStat = {

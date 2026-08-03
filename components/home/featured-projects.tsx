@@ -7,7 +7,7 @@ export function FeaturedProjects() {
   const featured = projects.filter((p) => p.featured).slice(0, 3)
 
   return (
-    <section className="bg-secondary py-16 sm:py-20 lg:py-24">
+    <section className="bg-secondary py-10 sm:py-14 lg:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Our Work in Practice"
@@ -17,13 +17,13 @@ export function FeaturedProjects() {
           className="mx-auto"
         />
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {featured.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-6 text-center">
           <ActionLink href="/projects" variant="primary" size="lg">
             View All Projects
           </ActionLink>

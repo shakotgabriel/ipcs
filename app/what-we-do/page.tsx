@@ -25,7 +25,7 @@ export default function WhatWeDoPage() {
         breadcrumbs={[{ label: 'What We Do' }]}
       />
 
-      <section className="relative py-20 md:py-28">
+      <section className="relative py-16 md:py-20">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-muted/10 to-background" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -44,7 +44,7 @@ export default function WhatWeDoPage() {
                   className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16"
                 >
                   <div className={`relative ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                    <div className="absolute -inset-4 bg-gradient-to-r from-primary/15 to-cream/15 rounded-3xl blur-2xl opacity-40" />
+                    <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-primary/15 to-secondary/15 blur-2xl opacity-40" />
                     <div className="relative grid gap-4">
                       <div className="relative aspect-video overflow-hidden rounded-2xl border border-border shadow-lg">
                         <Image
@@ -118,7 +118,7 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      <section className="bg-muted py-16 md:py-20">
+      <section className="bg-muted py-12 md:py-16">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-balance font-display text-3xl font-bold text-foreground md:text-4xl">
             See our work in action

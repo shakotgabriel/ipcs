@@ -7,15 +7,15 @@ import { SectionHeading } from '@/components/ui/section-heading'
 
 const areaColors: Record<string, string> = {
   'governance-civil-society-strengthening': 'bg-primary',
-  'civic-education-access-information': 'bg-fountain-blue',
-  'human-rights-rule-of-law-access-to-justice': 'bg-barberry',
+  'civic-education-access-information': 'bg-primary-dark',
+  'human-rights-rule-of-law-access-to-justice': 'bg-secondary',
 }
 
 export function AreasOfWork() {
   const areas = thematicAreas.slice(0, 3)
 
   return (
-    <section className="bg-background py-16 sm:py-20 lg:py-24">
+    <section className="bg-background py-10 sm:py-14 lg:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Where We Focus"
@@ -25,7 +25,7 @@ export function AreasOfWork() {
           className="mx-auto"
         />
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 lg:grid-cols-3">
           {areas.map((area, index) => (
             <article
               key={area.slug}
@@ -47,7 +47,7 @@ export function AreasOfWork() {
                 </p>
                 <a
                   href={`/what-we-do#${area.slug}`}
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-fountain-blue"
+                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary-dark"
                 >
                   Explore this area
                   <ArrowRight className="size-4" />

@@ -7,18 +7,18 @@ import { socialIconMap } from '@/components/ui/social-icons'
 
 export function Footer() {
   return (
-    <footer className="bg-background text-foreground">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-4">
+    <footer className="bg-brand-navy text-white">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-4">
           {/* About */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2">
-              <span className="font-display font-semibold text-lg text-primary">I</span>
-              <span className="font-display font-semibold text-base">
+              <span className="font-display text-lg font-semibold text-white">I</span>
+              <span className="font-display text-base font-semibold text-white">
                 {siteConfig.name}
               </span>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-sm leading-relaxed text-white/80">
               {siteConfig.description}
             </p>
             <div className="mt-6 flex gap-3">
@@ -31,7 +31,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-primary"
+                    className="flex size-8 items-center justify-center rounded-full text-white/75 transition-colors hover:text-white"
                   >
                     <Icon className="size-4" />
                   </a>
@@ -42,7 +42,7 @@ export function Footer() {
 
           {/* Quick links */}
           <nav aria-label="Footer quick links">
-            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
               Quick Links
             </h2>
             <ul className="mt-4 space-y-2.5">
@@ -50,7 +50,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-sm text-white/80 transition-colors hover:text-white"
                   >
                     {item.label}
                   </Link>
@@ -61,14 +61,14 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
               Contact
             </h2>
-            <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+            <ul className="mt-4 space-y-3 text-sm text-white/80">
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="inline-flex items-center gap-2 transition-colors hover:text-primary"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-white"
                 >
                   {siteConfig.email}
                 </a>
@@ -76,7 +76,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 transition-colors hover:text-primary"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-white"
                 >
                   Send a Message
                 </Link>
@@ -90,23 +90,23 @@ export function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
               Stay Connected
             </h2>
-            <p className="mt-4 text-sm text-muted-foreground">
+            <p className="mt-4 text-sm text-white/80">
               Get occasional updates on IPCS projects, events and opportunities.
             </p>
             <div className="mt-4">
-              <NewsletterForm variant="light" />
+              <NewsletterForm variant="dark" />
             </div>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 sm:flex-row">
-          <p className="text-sm text-muted-foreground">
+        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/15 pt-5 sm:flex-row">
+          <p className="text-sm text-white/70">
             &copy; 2026 {siteConfig.name}. All Rights Reserved.
           </p>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-white/70">
             {siteConfig.fullName}
           </p>
         </div>

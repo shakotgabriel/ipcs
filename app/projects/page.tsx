@@ -22,7 +22,7 @@ export default function ProjectsPage() {
         breadcrumbs={[{ label: 'Projects' }]}
       />
 
-      <section className="relative py-20 md:py-28">
+      <section className="relative py-16 md:py-20">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-muted/10 to-background" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -64,7 +64,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="bg-muted py-20 md:py-28">
+      <section className="bg-muted py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 md:grid-cols-3">
             <div className="text-center">
@@ -104,7 +104,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="relative bg-gradient-to-br from-primary via-primary-dark to-navy py-20 md:py-28 text-primary-foreground">
+      <section className="relative bg-gradient-to-br from-primary via-primary-dark to-primary-dark py-16 md:py-20 text-primary-foreground">
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`,
         }} />

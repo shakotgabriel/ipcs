@@ -17,7 +17,7 @@ export function NewsCard({ item }: { item: NewsItem }) {
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
-        <span className="absolute left-3 top-3 rounded-full bg-cream px-3 py-1 text-xs font-semibold text-charcoal">
+        <span className="absolute left-3 top-3 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
           {item.category}
         </span>
       </Link>

@@ -10,9 +10,9 @@ import { VisionMission } from "@/components/home/vision-mission";
 
 export default function Home() {
   return (
-    <div className="pb-16">
+    <div className="bg-transparent pb-8">
       <Hero />
-      <main className="site-shell space-y-10  pb-8 pt-6 sm:space-y-20 sm:pt-10">
+      <main className="w-full space-y-6 pb-4 pt-3 sm:space-y-10 sm:pt-6">
         <ImpactIntro />
         <ImpactStats />
         <VisionMission />

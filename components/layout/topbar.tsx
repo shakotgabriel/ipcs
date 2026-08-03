@@ -4,7 +4,7 @@ import { siteConfig } from '@/lib/data/site'
 
 export function Topbar() {
   return (
-    <div className="bg-blue-800 text-foreground text-xs border-b border-border">
+    <div className="bg-brand-navy text-foreground text-xs border-b border-border">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="flex items-center gap-4 text-white">
           <a

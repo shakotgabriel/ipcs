@@ -55,7 +55,7 @@ export default async function AreaDetailPage({
         ]}
       />
 
-      <section className="py-16 md:py-20">
+      <section className="py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-3 lg:gap-14">
             <div className="lg:col-span-2">
@@ -138,7 +138,7 @@ export default async function AreaDetailPage({
                       className="flex items-start gap-2 text-sm text-muted-foreground"
                     >
                       <span
-                        className="mt-1.5 size-1.5 shrink-0 rounded-full bg-cream"
+                        className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary"
                         aria-hidden="true"
                       />
                       {group}
@@ -149,7 +149,7 @@ export default async function AreaDetailPage({
 
               <div className="rounded-2xl bg-primary p-6 text-primary-foreground">
                 <div className="flex items-center gap-2">
-                  <TrendingUp className="size-5 text-cream" />
+                  <TrendingUp className="size-5 text-primary-foreground" />
                   <h2 className="font-display text-lg font-semibold">
                     Expected Impact
                   </h2>
@@ -175,7 +175,7 @@ export default async function AreaDetailPage({
       </section>
 
       {relatedProjects.length > 0 && (
-        <section className="bg-muted py-16 md:py-20">
+        <section className="bg-muted py-12 md:py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="font-display text-2xl font-bold text-foreground md:text-3xl">
               Related Projects

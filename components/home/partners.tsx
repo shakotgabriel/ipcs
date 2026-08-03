@@ -1,9 +1,10 @@
+import Image from 'next/image'
 import { SectionHeading } from '@/components/ui/section-heading'
 import { partners } from '@/lib/data/content'
 
 export function Partners() {
   return (
-    <section className="bg-background py-16 sm:py-20 lg:py-24">
+    <section className="bg-transparent py-10 sm:py-14 lg:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Collaboration"
@@ -13,21 +14,25 @@ export function Partners() {
           className="mx-auto"
         />
 
-        <div className="mt-12 flex flex-wrap justify-center gap-6">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:gap-10">
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="flex items-center justify-center rounded-lg border border-border bg-card px-6 py-4 text-center min-w-[180px] shadow-sm transition-all hover:border-fountain-blue/40 hover:bg-secondary"
+              className="group flex min-w-[11rem] flex-1 basis-40 items-center justify-center"
             >
-              <span className="text-sm font-medium text-foreground">
+              <Image
+                src={partner.logo}
+                alt={`${partner.name} logo`}
+                width={320}
+                height={160}
+                className="h-auto w-full max-w-[11rem] object-contain opacity-95 transition-transform duration-300 group-hover:scale-[1.03] group-hover:opacity-100 sm:max-w-[12rem] lg:max-w-[13rem]"
+              />
+              <span className="sr-only">
                 {partner.name}
               </span>
             </div>
           ))}
         </div>
-        <p className="mt-6 text-center text-xs text-muted-foreground">
-          Partner logos shown are placeholders pending confirmation from each partner organization.
-        </p>
       </div>
     </section>
   )

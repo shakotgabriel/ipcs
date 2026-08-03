@@ -1,14 +1,14 @@
 import { ImageIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-export type PlaceholderVariant = 'primary' | 'cream' | 'navy' | 'charcoal' | 'mixed'
+export type PlaceholderVariant = 'primary' | 'sky' | 'navy' | 'charcoal' | 'mixed'
 
 const variantStyles: Record<PlaceholderVariant, string> = {
   primary: 'bg-gradient-to-br from-primary to-primary-dark text-primary-foreground',
-  cream: 'bg-gradient-to-br from-cream to-gold-dark text-charcoal',
-  navy: 'bg-gradient-to-br from-shell to-navy text-shell-foreground',
-  charcoal: 'bg-gradient-to-br from-charcoal to-shell text-white',
-  mixed: 'bg-gradient-to-br from-primary via-shell to-charcoal text-white',
+  sky: 'bg-gradient-to-br from-secondary to-primary-dark text-primary-dark',
+  navy: 'bg-gradient-to-br from-primary-dark to-primary text-primary-foreground',
+  charcoal: 'bg-gradient-to-br from-primary-dark to-foreground text-white',
+  mixed: 'bg-gradient-to-br from-primary via-secondary to-primary-dark text-primary-foreground',
 }
 
 export function ImagePlaceholder({

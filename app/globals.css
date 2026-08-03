@@ -6,12 +6,12 @@
 
 :root {
   /* Brand Colors */
-  --brand-blue: #537adb;
-  --brand-blue-dark: #4268c4;
-  --brand-navy: #011627;
+  --brand-blue: #4f80ff;
+  --brand-blue-dark: #153a8a;
+  --brand-navy: #0a1f44;
+  --brand-sky: #eaf2ff;
+  --brand-sky-soft: #f6f9ff;
   --brand-charcoal: #343633;
-  --brand-cream: #fff8d3;
-  --brand-cream-soft: #fffdf5;
   --brand-white: #ffffff;
 
   /* Semantic Colors */
@@ -22,20 +22,20 @@
   --primary-dark: var(--brand-blue-dark);
   --primary-foreground: #ffffff;
 
-  --secondary: var(--brand-cream);
-  --secondary-foreground: var(--brand-charcoal);
+  --secondary: var(--brand-sky);
+  --secondary-foreground: var(--brand-navy);
 
-  --accent: var(--brand-cream);
-  --accent-soft: var(--brand-cream-soft);
+  --accent: var(--brand-sky);
+  --accent-soft: var(--brand-sky-soft);
   --accent-foreground: var(--brand-navy);
 
-  --muted: #f8f7ef;
-  --muted-foreground: #5a5c58;
+  --muted: #f4f8ff;
+  --muted-foreground: #5a677f;
 
   --card: #ffffff;
   --card-foreground: var(--brand-charcoal);
 
-  --border: rgba(83, 122, 219, 0.16);
+  --border: rgba(79, 128, 255, 0.16);
   --ring: var(--brand-blue);
 
   --destructive: #c53030;
@@ -52,10 +52,10 @@
 
   /* Shadows */
   --shadow-soft:
-    0 10px 30px rgba(1, 22, 39, 0.08);
+    0 10px 30px rgba(10, 31, 68, 0.08);
 
   --shadow-card:
-    0 20px 60px rgba(1, 22, 39, 0.12);
+    0 20px 60px rgba(10, 31, 68, 0.12);
 }
 
 
@@ -93,9 +93,10 @@
 
   /* Brand shortcuts */
   --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-dark: var(--brand-blue-dark);
   --color-brand-navy: var(--brand-navy);
   --color-brand-charcoal: var(--brand-charcoal);
-  --color-brand-cream: var(--brand-cream);
+  --color-brand-sky: var(--brand-sky);
   --color-brand-white: var(--brand-white);
 
 
@@ -147,7 +148,7 @@ body {
   background:
     radial-gradient(
       circle at top,
-      rgba(83,122,219,0.08),
+      rgba(79,128,255,0.08),
       transparent 40%
     ),
     var(--background);
@@ -174,7 +175,7 @@ img {
 
 
 ::selection {
-  background: rgba(83,122,219,0.25);
+  background: rgba(79,128,255,0.25);
   color: var(--brand-navy);
 }
 
@@ -184,7 +185,7 @@ img {
 ================================ */
 
 .site-shell {
-  width: min(1120px, calc(100% - 2rem));
+  width: min(1280px, calc(100% - 1rem));
   margin-inline: auto;
 }
 
@@ -205,7 +206,7 @@ img {
     blur(18px);
 
   border:
-    1px solid rgba(83,122,219,0.12);
+    1px solid rgba(79,128,255,0.12);
 
   box-shadow:
     var(--shadow-card);

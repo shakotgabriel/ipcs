@@ -26,7 +26,7 @@ const highlights = [
 
 export function ImpactIntro() {
   return (
-    <section className="relative isolate flex min-h-screen items-center overflow-hidden">
+    <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 -z-30">
         <Image
@@ -57,7 +57,7 @@ export function ImpactIntro() {
         }}
       />
 
-      <div className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <SectionHeading
           eyebrow="Who We Are"
           title="Building Accountable Leadership, Empowered Citizens and Resilient Communities"
@@ -65,13 +65,13 @@ export function ImpactIntro() {
           align="center"
           className="
             mx-auto
-            [&_span]:text-yellow-300
+            [&_span]:text-sky-200
             [&_h2]:text-white
             [&_p]:text-gray-100
           "
         />
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
           {highlights.map((item) => (
             <div
               key={item.title}
@@ -79,7 +79,7 @@ export function ImpactIntro() {
                 group rounded-3xl 
                 border border-white/20 
                 bg-black/40 
-                p-8 
+                p-6 
                 text-center 
                 backdrop-blur-xl
                 transition-all 
@@ -91,7 +91,7 @@ export function ImpactIntro() {
             >
               <div
                 className="
-                  mx-auto flex h-16 w-16 
+                  mx-auto flex h-14 w-14 
                   items-center justify-center 
                   rounded-2xl 
                   bg-primary/40 
@@ -103,11 +103,11 @@ export function ImpactIntro() {
                 <item.icon className="h-8 w-8" />
               </div>
 
-              <h3 className="mt-6 font-display text-xl font-bold text-white">
+                <h3 className="mt-5 font-display text-lg font-bold text-white">
                 {item.title}
               </h3>
 
-              <p className="mt-4 leading-7 text-gray-200">
+              <p className="mt-3 leading-6 text-gray-200">
                 {item.description}
               </p>
             </div>

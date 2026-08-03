@@ -40,7 +40,7 @@ export function Header() {
       <header className="sticky top-0 z-50 border-b border-border bg-background text-foreground shadow-sm">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-md focus:bg-barberry focus:px-4 focus:py-2 focus:text-sm focus:text-blue-dianne"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-primary-foreground"
         >
           Skip to main content
         </a>
